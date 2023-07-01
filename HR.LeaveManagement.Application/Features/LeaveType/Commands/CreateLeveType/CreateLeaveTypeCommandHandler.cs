@@ -25,7 +25,7 @@ public class CreateLeaveTypeCommandHandler : IRequestHandler<CreateLeaveTypeComm
 
         if (validationResult.Errors.Any())
         {
-            throw new BadRequestException("Invlaid LeaveType", validationResult);
+            throw new BadRequestException("Invalid LeaveType", validationResult);
         }
 
         var leaveTypeToCreate = _mapper.Map<Domain.LeaveType>(request);

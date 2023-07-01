@@ -20,7 +20,7 @@ public class CreateLeaveTypeCommandValidator : AbstractValidator<CreateLeaveType
 
         RuleFor(q => q)
             .MustAsync(LeaveTypeNameUnique)
-            .WithMessage("Leave type name must be unique");
+            .WithMessage("Leave type name already exists");
 
         this._leaveTypeRepository = leaveTypeRepository;
     }
