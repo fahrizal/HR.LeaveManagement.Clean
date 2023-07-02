@@ -1,6 +1,7 @@
 
 using HR.LeaveManagement.Api.Middleware;
 using HR.LeaveManagement.Application;
+using HR.LeaveManagement.Identity;
 using HR.LeaveManagement.Infrastructure;
 using HR.LeaveManagement.Persistence;
 
@@ -16,6 +17,7 @@ public class Program
         builder.Services.AddApplicationServices();
         builder.Services.AddInfrastructureServices(builder.Configuration);
         builder.Services.AddPersistenceServices(builder.Configuration);
+        builder.Services.AddIdentityServices(builder.Configuration);
 
         builder.Services.AddControllers();
 
@@ -49,6 +51,7 @@ public class Program
 
         app.UseCors("Open");
 
+        app.UseAuthentication();
         app.UseAuthorization();
 
 
