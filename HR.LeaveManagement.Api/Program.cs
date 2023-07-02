@@ -47,6 +47,8 @@ public class Program
 
         app.UseHttpsRedirection();
 
+        app.UseCors("Open");
+
         app.UseAuthorization();
 
 
